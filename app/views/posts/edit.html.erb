@@ -1,0 +1,12 @@
+<%= form_for @post do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+
+    <%= f.label :category_id, "Category" %>
+    <%= f.collection_select :category_id, @categories, :id, :title %>
+
+    <%= f.submit "Update" %>
+<% end %>

@@ -1,0 +1,12 @@
+<h1><%= @post.title %></h1>
+<p><%= @post.content %></p>
+<p>
+    <strong>Creation Date:</strong>
+    <%= @post.creation_dt.strftime("%B %d, %Y") if @post.creation_dt.present? %>
+</p>
+<p>Category: <%= @post.category.title %></p>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, 'data-turbolinks': false %>
+
+<%= link_to 'Back to Posts', posts_path %>
