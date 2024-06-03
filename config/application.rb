@@ -11,6 +11,11 @@ module CodespacesTryRails
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
 
+    SemanticLogger.default_level = :info
+    SemanticLogger.add_appender(file_name: 'development.log')
+    SemanticLogger.add_appender(file_name: 'debug.log', level: :debug)
+    SemanticLogger.application = 'SemanticLogger'
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
