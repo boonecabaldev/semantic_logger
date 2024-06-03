@@ -80,4 +80,10 @@ Rails.application.configure do
   config.hosts << "localhost:3000"
 
   config.action_cable.allowed_request_origins = ["https://#{pf_host}", "http://localhost:3000"]
+
+  # Delete development.log file each time the server starts
+  if Rails.root.join('log', "#{Rails.env}.log").exist?
+    File.delete(Rails.root.join('log', "#{Rails.env}.log"))
+  end
+
 end
