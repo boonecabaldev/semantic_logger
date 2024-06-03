@@ -7,6 +7,6 @@
 <p>Category: <%= @post.category.title %></p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' }, style: 'color: red;' %>
+<%= button_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' }, form: { style: 'display: inline;' } %>
 
 <%= link_to 'Back to Posts', posts_path %>
